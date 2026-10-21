@@ -14,12 +14,12 @@ export type RawPlayer = {
   Overall: string;
 
   Dribbling: string;
-  "Ball Control": string;
-  "Heading Accuracy": string;
+  BallControl: string;
+  HeadingAccuracy: string;
   Acceleration: string;
-  "Sprint Speed": string;
+  SprintSpeed: string;
   Agility: string;
-  "Shot Power": string;
+  ShotPower: string;
   Stamina: string;
   Strength: string;
 };
