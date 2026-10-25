@@ -1,21 +1,58 @@
+.explorer-player-card {
+  width: 225px;
+  border: 1px solid red;
+  border-radius: 12px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.top-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.overall-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overall-content strong {
+  font-size: 44px;
+}
+
 .player-photo-placeholder {
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   background-color: #1a1a1a;
-  border-radius: 100%;
+  border-radius: 50%;
+}
+
+.player-name-position {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .content-group {
   display: flex;
-}
-
-.content-group span {
-  margin-left: 15px;
+  align-items: center;
+  gap: 7px;
 }
 
 .icon-placeholder {
   width: 25px;
   height: 25px;
   background-color: #1a1a1a;
-  border-radius: 100%;
+  border-radius: 50%;
+}
+
+.btn {
+  margin-top: 20px;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
 }

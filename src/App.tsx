@@ -31,9 +31,18 @@ function App() {
       </section>
       <section>
         <h2>Players</h2>
-        <article>
-          <div className="player-photo-placeholder"></div>
-          <h3>{explorerPlayer.identity.name}</h3>
+        <article className="explorer-player-card">
+          <div className="top-content">
+            <div className="player-photo-placeholder"></div>
+            <p className="overall-content">
+              <strong>{explorerPlayer.overall}</strong>
+              <span>Overall</span>
+            </p>
+          </div>
+          <div className="player-name-position">
+            <h3>{explorerPlayer.identity.name}</h3>
+            <p>{explorerPlayer.identity.position}</p>
+          </div>
           <div className="content-group">
             <span className="icon-placeholder"></span>
             <span>{explorerPlayer.identity.nationality}</span>
@@ -42,12 +51,7 @@ function App() {
             <span className="icon-placeholder"></span>
             <span>{explorerPlayer.identity.club}</span>
           </div>
-          <p>{explorerPlayer.identity.position}</p>
-          <p className="player-overall">
-            <strong>{explorerPlayer.overall}</strong>
-            <span>Overall</span>
-          </p>
-          <button>View More</button>
+          <button className="btn">View More</button>
         </article>
       </section>
     </>
