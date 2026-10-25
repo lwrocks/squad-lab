@@ -26,12 +26,29 @@ function App() {
   return (
     <>
       <section>
-        <h1>Squad Lab</h1>
-        <h2>{explorerPlayer.identity.name}</h2>
-        <p>Nationality: {explorerPlayer.identity.nationality}</p>
-        <p>Club: {explorerPlayer.identity.club}</p>
-        <p>Position: {explorerPlayer.identity.position}</p>
-        <p>Overall: {explorerPlayer.overall}</p>
+        <h1>Player Explorer</h1>
+        <p>This is the player explorer. Learn about your favorite players!</p>
+      </section>
+      <section>
+        <h2>Players</h2>
+        <article>
+          <div className="player-photo-placeholder"></div>
+          <h3>{explorerPlayer.identity.name}</h3>
+          <div className="content-group">
+            <span className="icon-placeholder"></span>
+            <span>{explorerPlayer.identity.nationality}</span>
+          </div>
+          <div className="content-group">
+            <span className="icon-placeholder"></span>
+            <span>{explorerPlayer.identity.club}</span>
+          </div>
+          <p>{explorerPlayer.identity.position}</p>
+          <p className="player-overall">
+            <strong>{explorerPlayer.overall}</strong>
+            <span>Overall</span>
+          </p>
+          <button>View More</button>
+        </article>
       </section>
     </>
   );
