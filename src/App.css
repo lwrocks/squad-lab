@@ -56,3 +56,9 @@
   padding: 10px;
   border-radius: 8px;
 }
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}

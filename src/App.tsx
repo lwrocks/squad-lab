@@ -26,8 +26,8 @@ function App() {
         <h1>Player Explorer</h1>
         <p>This is the player explorer. Learn about your favorite players!</p>
       </section>
-      <section>
-        <h2>Players</h2>
+      <h2>Players</h2>
+      <section className="players-grid">
         {explorerPlayers.map((player) => {
           return <PlayerCard key={player.identity.id} player={player} />;
         })}
