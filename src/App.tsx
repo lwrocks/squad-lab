@@ -6,23 +6,19 @@ import type { ExplorerPlayer } from "./types/player";
 import PlayerCard from "./components/PlayerCard";
 
 function App() {
-  const [explorerPlayer, setExplorerPlayer] = useState<ExplorerPlayer | null>(
-    null,
-  );
+  const [explorerPlayers, setExplorerPlayers] = useState<ExplorerPlayer[]>([]);
 
   useEffect(() => {
     async function loadPlayers() {
       const players = await parsePlayers();
 
-      const player = transformPlayer(players[0]);
-      setExplorerPlayer(player);
+      const transformedPlayers = players.map((player) =>
+        transformPlayer(player),
+      );
+      setExplorerPlayers(transformedPlayers);
     }
     loadPlayers();
   }, []);
-
-  if (!explorerPlayer) {
-    return null;
-  }
 
   return (
     <>
@@ -32,7 +28,9 @@ function App() {
       </section>
       <section>
         <h2>Players</h2>
-        <PlayerCard player={explorerPlayer} />
+        {explorerPlayers.map((player) => {
+          return <PlayerCard key={player.identity.id} player={player} />;
+        })}
       </section>
     </>
   );

@@ -16,6 +16,7 @@ export async function parsePlayers(): Promise<RawPlayer[]> {
     return new Promise((resolve) => {
       Papa.parse<RawPlayer>(csv, {
         header: true,
+        skipEmptyLines: true,
         complete: (results) => {
           resolve(results.data);
         },
