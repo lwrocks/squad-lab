@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { parsePlayers } from "./utils/csv";
 import { transformPlayer } from "./utils/player";
 import type { ExplorerPlayer } from "./types/player";
+import PlayerCard from "./components/PlayerCard";
 
 function App() {
   const [explorerPlayer, setExplorerPlayer] = useState<ExplorerPlayer | null>(
@@ -31,28 +32,7 @@ function App() {
       </section>
       <section>
         <h2>Players</h2>
-        <article className="explorer-player-card">
-          <div className="top-content">
-            <div className="player-photo-placeholder"></div>
-            <p className="overall-content">
-              <strong>{explorerPlayer.overall}</strong>
-              <span>Overall</span>
-            </p>
-          </div>
-          <div className="player-name-position">
-            <h3>{explorerPlayer.identity.name}</h3>
-            <p>{explorerPlayer.identity.position}</p>
-          </div>
-          <div className="content-group">
-            <span className="icon-placeholder"></span>
-            <span>{explorerPlayer.identity.nationality}</span>
-          </div>
-          <div className="content-group">
-            <span className="icon-placeholder"></span>
-            <span>{explorerPlayer.identity.club}</span>
-          </div>
-          <button className="btn">View More</button>
-        </article>
+        <PlayerCard player={explorerPlayer} />
       </section>
     </>
   );
