@@ -1,5 +1,13 @@
 import type { RawPlayer, ExplorerPlayer } from "../types/player";
 
+function parseNumericValue(value: string): number | null {
+  if (value.trim() === "") {
+    return null;
+  }
+
+  return Number.parseFloat(value);
+}
+
 export function transformPlayer(rawPlayer: RawPlayer): ExplorerPlayer {
   return {
     identity: {
@@ -16,22 +24,22 @@ export function transformPlayer(rawPlayer: RawPlayer): ExplorerPlayer {
     },
 
     physical: {
-      height: rawPlayer.Height,
-      weight: parseInt(rawPlayer.Weight),
+      height: rawPlayer.Height.trim() === "" ? null : rawPlayer.Height,
+      weight: parseNumericValue(rawPlayer.Weight),
     },
 
-    overall: Number(rawPlayer.Overall),
+    overall: parseNumericValue(rawPlayer.Overall),
 
     stats: {
-      dribbling: Number(rawPlayer.Dribbling),
-      ballControl: Number(rawPlayer.BallControl),
-      headingAccuracy: Number(rawPlayer.HeadingAccuracy),
-      acceleration: Number(rawPlayer.Acceleration),
-      sprintSpeed: Number(rawPlayer.SprintSpeed),
-      agility: Number(rawPlayer.Agility),
-      shotPower: Number(rawPlayer.ShotPower),
-      stamina: Number(rawPlayer.Stamina),
-      strength: Number(rawPlayer.Strength),
+      dribbling: parseNumericValue(rawPlayer.Dribbling),
+      ballControl: parseNumericValue(rawPlayer.BallControl),
+      headingAccuracy: parseNumericValue(rawPlayer.HeadingAccuracy),
+      acceleration: parseNumericValue(rawPlayer.Acceleration),
+      sprintSpeed: parseNumericValue(rawPlayer.SprintSpeed),
+      agility: parseNumericValue(rawPlayer.Agility),
+      shotPower: parseNumericValue(rawPlayer.ShotPower),
+      stamina: parseNumericValue(rawPlayer.Stamina),
+      strength: parseNumericValue(rawPlayer.Strength),
     },
   };
 }

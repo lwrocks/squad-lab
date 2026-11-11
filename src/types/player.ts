@@ -39,21 +39,21 @@ export type ExplorerPlayer = {
   };
 
   physical: {
-    height: string;
-    weight: number;
+    height: string | null;
+    weight: number | null;
   };
 
-  overall: number;
+  overall: number | null;
 
   stats: {
-    dribbling: number;
-    ballControl: number;
-    headingAccuracy: number;
-    acceleration: number;
-    sprintSpeed: number;
-    agility: number;
-    shotPower: number;
-    stamina: number;
-    strength: number;
+    dribbling: number | null;
+    ballControl: number | null;
+    headingAccuracy: number | null;
+    acceleration: number | null;
+    sprintSpeed: number | null;
+    agility: number | null;
+    shotPower: number | null;
+    stamina: number | null;
+    strength: number | null;
   };
 };
